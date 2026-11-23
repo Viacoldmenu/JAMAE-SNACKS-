@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>JAMAE Snacks · Menú digital · Pachuca</title>
+  <meta name="description" content="Menú digital de JAMAE Snacks en Pachuca: banderillas coreanas Solin, Cornflake, Gamja, Flameante, Cheddar, Jin, Chicken, Chokollis y papas waffle.">
+  <meta name="theme-color" content="#2a0b4d">
+  <meta property="og:title" content="JAMAE Snacks · Menú digital">
+  <meta property="og:description" content="Banderillas coreanas con masa especial y panko crujiente. Pachuca, Hidalgo.">
+  <meta property="og:image" content="assets/img/portada.jpg">
+  <link rel="icon" href="assets/img/logo.png">
+
+  <script>
+    // si el script principal no arranca, mostramos todo sin animaciones
+    document.documentElement.classList.add('js');
+    setTimeout(function () {
+      if (!document.documentElement.classList.contains('ready')) document.documentElement.classList.remove('js');
+    }, 3500);
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script type="importmap">
+    { "imports": { "three": "./assets/vendor/three.module.min.js" } }
+  </script>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"></div>
+
+  <header class="top">
+    <a class="brand" href="#inicio" aria-label="JAMAE Snacks, ir al inicio">
+      <img src="assets/img/mascota.png" alt="" width="1240" height="1240">
+    </a>
+    <nav class="nav" aria-label="Secciones del menú">
+      <a href="#banderillas">Banderillas</a>
+      <a href="#dulce">Dulce</a>
+      <a href="#papas">Papas</a>
+      <a href="#bebidas">Bebidas</a>
+    </nav>
+    <a class="top-cta" href="#pedir">Pedir <span aria-hidden="true">→</span></a>
+  </header>
+
+  <main>
+    <!-- ───────────── HERO ───────────── -->
+    <section id="inicio" class="hero">
+      <span class="star s1" aria-hidden="true"></span>
+      <span class="star s2" aria-hidden="true"></span>
+      <span class="star s3" aria-hidden="true"></span>
+      <span class="star s4" aria-hidden="true"></span>
+
+      <div class="hero-copy">
+        <p class="kicker"><span class="w" style="--k:0"><span>Banderillas</span></span> <span class="w" style="--k:1"><span>coreanas</span></span> <span class="w" style="--k:2"><span>·</span></span> <span class="w" style="--k:3"><span>Pachuca</span></span></p>
+
+        <h1 class="mega" aria-label="JAMAE Snacks">
+          <span class="mega-word" aria-hidden="true">
+            <span class="L" style="--i:0">J</span><span class="L" style="--i:1">A</span><span class="L" style="--i:2">M</span><span class="L" style="--i:3">A</span><span class="L" style="--i:4">E</span>
+          </span>
+          <span class="script" aria-hidden="true">snacks</span>
+        </h1>
+
+        <p class="rolling">Hoy se me antoja algo
+          <span class="roll" aria-hidden="true">
+            <span style="--k:0">crujiente</span><span style="--k:1">picosito</span><span style="--k:2">con queso</span><span style="--k:3">dulce</span>
+          </span>
+        </p>
+
+        <p class="lead" data-reveal>Masa especial de receta secreta, panko crujiente y toppings para todos los antojos.</p>
+
+        <div class="hero-links" data-reveal>
+          <a class="arrow-link" href="#banderillas">Ver el menú <span aria-hidden="true">↓</span></a>
+          <a class="arrow-link alt" href="https://www.ubereats.com/mx/store/jamae-snacks-pachuca/hyT-AEDOWouZgGAXK5rqSQ" target="_blank" rel="noopener">Pedir en Uber Eats <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <div class="hero-3d" id="stage">
+        <img class="mascot-2d" src="assets/img/mascota.png" alt="Mascota de JAMAE comiendo una banderilla" width="1240" height="1240">
+        <canvas id="mascota3d" aria-hidden="true"></canvas>
+      </div>
+
+      <a class="scroll-cue" href="#banderillas" aria-label="Bajar al menú"><span></span></a>
+    </section>
+
+    <!-- ───────────── MARQUEE ───────────── -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-skew">
+        <div class="marquee-track">
+          <span>Solin</span><i></i><span>Cornflake</span><i></i><span>Gamja</span><i></i><span>Flameante</span><i></i><span>Cheddar</span><i></i><span>Jin</span><i></i><span>Chicken</span><i></i><span>Chokollis</span><i></i><span>Papas waffle</span><i></i>
+          <span>Solin</span><i></i><span>Cornflake</span><i></i><span>Gamja</span><i></i><span>Flameante</span><i></i><span>Cheddar</span><i></i><span>Jin</span><i></i><span>Chicken</span><i></i><span>Chokollis</span><i></i><span>Papas waffle</span><i></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───────────── MENÚ ───────────── -->
+    <div class="menu">
+
+      <section id="banderillas" class="sec" aria-labelledby="t-band">
+        <header class="sec-head">
+          <h2 class="title" id="t-band">
+            <span class="line"><span>Banderillas</span></span>
+            <span class="line"><span>coreanas</span></span>
+          </h2>
+          <p class="blurb" data-reveal>Masa especial (receta secreta de la casa) con panko y el topping que elijas.</p>
+          <span class="burst" aria-hidden="true"></span>
+        </header>
+
+        <div class="list">
+          <article class="item">
+            <span class="num" aria-hidden="true">01</span>
+            <div class="pic"><img src="assets/img/solin.jpg" alt="Banderilla Solin" width="550" height="550" loading="lazy"></div>
+            <div class="info">
+              <h3 class="name" data-split>Solin</h3>
+              <p class="desc">Masa especial (receta secreta de la casa) + panko</p>
+            </div>
+            <p class="price"><span class="cur">$</span><span class="count" data-to="70">70</span><small>MXN</small></p>
+          </article>
+
+          <article class="item">
+            <span class="num" aria-hidden="true">02</span>
+            <div class="pic"><img src="assets/img/cornflake.jpg" alt="Banderilla Cornflake" width="550" height="550" loading="lazy"></div>
+            <div class="info">
+              <h3 class="name" data-split>Cornflake</h3>
+              <p class="desc">Masa especial (receta secreta de la casa) + hojuelas de maíz + azúcar + panko</p>
+            </div>
+            <p class="price"><span class="cur">$</span><span class="count" data-to="70">70</span><small>MXN</small></p>
+          </article>
+
+          <article class="item">
+            <span class="num" aria-hidden="true">03</span>
+            <div class="pic"><img src="assets/img/gamja.jpg" alt="Banderilla Gamja" width="550" height="550" loading="lazy"></div>
+            <div class="info">
+              <h3 class="name" data-split>Gamja</h3>
+              <p class="desc">Masa especial (receta secreta de la casa) + panko + cubos de papa</p>
+            </div>
+            <p class="price"><span class="cur">$</span><span class="count" data-to="90">90</span><small>MXN</small></p>
+          </article>
+
+          <article class="item">
+            <span class="num" aria-hidden="true">04</span>
+            <div class="pic"><img src="assets/img/flameante.jpg" alt="Banderilla Flameante" width="550" height="550" loading="lazy"></div>
+            <div class="info">
+              <h3 class="name" data-split>Flameante</h3>
+              <p class="desc">Masa especial (receta secreta de la casa) + panko + Cheetos Flaming Hot</p>
+              <p class="hot">✦ Popular</p>
+            </div>
+            <p class="price"><span class="cur">$</span><span class="count" data-to="95">95</span><small>MXN</small></p>
+          </article>
+
+          <article class="item">
+            <span class="num" aria-hidden="true">05</span>
+            <div class="pic"><img src="assets/img/cheddar.jpg" alt="Banderilla Cheddar" width="550" height="550" loading="lazy"></div>
+            <div class="info">
+              <h3 class="name" data-split>Cheddar</h3>
+              <p class="desc">Masa especial (receta secreta de la casa) + panko + Cheetos torciditos</p>
+              <p class="hot">✦ Popular</p>
+            </div>
+            <p class="price"><span class="cur">$</span><span class="count" data-to="95">95</span><small>MXN</small></p>
+          </article>
+
+          <article class="item">
+            <span class="num" aria-hidden="true">06</span>
+            <div class="pic"><img src="assets/img/jin.jpg" alt="Banderilla Jin" width="550" height="550" loading="lazy"></div>
+            <div class="info">
+              <h3 class="name" data-split>Jin</h3>
+              <p class="desc">Masa especial (receta secreta de la casa) + panko + trozos de ramen</p>
+            </div>
+            <p class="price"><span class="cur">$</span><span class="count" data-to="105">105</span><small>MXN</small></p>
+          </article>
+
+          <article class="item">
+            <span class="num" aria-hidden="true">07</span>
+            <div class="pic"><img src="assets/img/chicken.jpg" alt="Banderilla Chicken" width="550" height="550" loading="lazy"></div>
+            <div class="info">
+              <h3 class="name" data-split>Chicken</h3>
+              <p class="desc">Masa especial (receta secreta de la casa) + panko + trozos de pollo</p>
+            </div>
+            <p class="price"><span class="cur">$</span><span class="count" data-to="110">110</span><small>MXN</small></p>
+          </article>
+        </div>
+      </section>
+
+      <section id="dulce" class="sec" aria-labelledby="t-dulce">
+        <header class="sec-head">
+          <h2 class="title" id="t-dulce">
+            <span class="line"><span>Banderilla</span></span>
+            <span class="line"><span>dulce</span></span>
+          </h2>
+          <span class="burst pink" aria-hidden="true"></span>
+        </header>
+
+        <div class="list">
+          <article class="item">
+            <span class="num" aria-hidden="true">08</span>
+            <div class="pic"><img src="assets/img/chokollis.jpg" alt="Banderilla dulce Chokollis" width="550" height="550" loading="lazy"></div>
+            <div class="info">
+              <h3 class="name" data-split>Chokollis</h3>
+              <p class="desc">Masa especial + panko + relleno de Kinder Delice</p>
+            </div>
+            <p class="price"><span class="cur">$</span><span class="count" data-to="85">85</span><small>MXN</small></p>
+          </article>
+        </div>
+      </section>
+
+      <section id="papas" class="sec" aria-labelledby="t-papas">
+        <header class="sec-head">
+          <h2 class="title" id="t-papas">
+            <span class="line"><span>Papas</span></span>
+            <span class="line"><span>fritas</span></span>
+          </h2>
+          <span class="burst" aria-hidden="true"></span>
+        </header>
+
+        <div class="list">
+          <article class="item">
+            <span class="num" aria-hidden="true">09</span>
+            <div class="pic fit-tall"><img src="assets/img/papas-waffle.jpg" alt="Papas waffle sazonadas" width="550" height="977" loading="lazy"></div>
+            <div class="info">
+              <h3 class="name" data-split>Papas waffle</h3>
+              <p class="desc">Papas sazonadas en forma de waffle</p>
+              <p class="hot">✦ Popular</p>
+            </div>
+            <p class="price"><span class="cur">$</span><span class="count" data-to="90">90</span><small>MXN</small></p>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <!-- ───────────── BEBIDAS + CONTACTO ───────────── -->
+    <div class="night">
+      <section id="bebidas" class="sec drinks" aria-labelledby="t-beb">
+        <header class="sec-head">
+          <h2 class="title" id="t-beb">
+            <span class="line"><span>Bebidas</span></span>
+          </h2>
+        </header>
+
+        <ul class="sips">
+          <li class="sip"><span class="sip-name" data-split>Coca Cola</span><span class="sip-note">Refresco</span><span class="sip-price"><span class="cur">$</span><span class="count" data-to="50">50</span></span></li>
+          <li class="sip"><span class="sip-name" data-split>Boing Guayaba</span><span class="sip-note">Jugo</span><span class="sip-price"><span class="cur">$</span><span class="count" data-to="35">35</span></span></li>
+          <li class="sip"><span class="sip-name" data-split>Boing Manzana</span><span class="sip-note">Jugo</span><span class="sip-price"><span class="cur">$</span><span class="count" data-to="35">35</span></span></li>
+          <li class="sip"><span class="sip-name" data-split>Boing Mango</span><span class="sip-note">Jugo</span><span class="sip-price"><span class="cur">$</span><span class="count" data-to="35">35</span></span></li>
+        </ul>
+      </section>
+
+      <footer id="pedir" class="finale">
+        <h2 class="big-cta" aria-label="¿Se te antojó?">
+          <span class="line"><span>¿Se te</span></span>
+          <span class="line"><span>antojó?</span></span>
+        </h2>
+
+        <a class="order-link" href="https://www.ubereats.com/mx/store/jamae-snacks-pachuca/hyT-AEDOWouZgGAXK5rqSQ" target="_blank" rel="noopener">
+          <span class="order-text" data-split>Pídela en Uber Eats</span>
+          <span class="order-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <div class="contact">
+          <div class="c-col" data-reveal>
+            <p class="c-label">Visítanos</p>
+            <p class="c-text">Profra. Laura Lugo 100<br>Pachuca de Soto, Hgo. 42060</p>
+          </div>
+          <div class="c-col" data-reveal style="--d:.08s">
+            <p class="c-label">Horario</p>
+            <p class="c-text">Martes a domingo<br>2:30 p.m. – 8:30 p.m.</p>
+          </div>
+          <div class="c-col" data-reveal style="--d:.16s">
+            <p class="c-label">Llama</p>
+            <p class="c-text"><a href="tel:+527712724543">771 272 4543</a></p>
+          </div>
+          <div class="c-col" data-reveal style="--d:.24s">
+            <p class="c-label">Síguenos</p>
+            <p class="c-text socials">
+              <a href="https://www.instagram.com/jamae_snacks_/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.2"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r=".9" fill="currentColor" stroke="none"/></svg>
+                Instagram
+              </a>
+              <a href="https://www.facebook.com/p/jamaesnacks20-61555395751617/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1z"/></svg>
+                Facebook
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <p class="legal">JAMAE Snacks · Pachuca, Hidalgo · Precios en pesos mexicanos</p>
+      </footer>
+    </div>
+  </main>
+
+  <script defer src="js/main.js"></script>
+</body>
+</html>
